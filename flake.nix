@@ -4,7 +4,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, flake-utils }:
     (flake-utils.lib.eachDefaultSystem (system:
       let pkgs = import nixpkgs { inherit system; };
       in {
@@ -14,7 +14,7 @@
             pname = "mop";
             version = "0.0.0";
             src = ./.;
-            propagatedBuildInputs = with python3Packages; [ pyyaml requests ];
+            propagatedBuildInputs = with pkgs.python3Packages; [ pyyaml requests ];
           };
         };
       }));
