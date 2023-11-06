@@ -38,7 +38,6 @@ def read_yaml(filename):
     return data
 
 def ask_nixhub_io(package):
-    return "01"
     resp = requests.get(f"https://www.nixhub.io/packages/{package.derivation}?_data=routes/_nixhub.packages.$pkg._index")
     resp_dict = resp.json()
     logging.info(f"GET DATA: {resp_dict}")
