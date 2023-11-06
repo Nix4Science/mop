@@ -43,11 +43,13 @@ mop envs.yaml
 
 `mop` will generate a `flake.nix` file that **tries** to match as best as it can the desired environments.
 
-## Notes
+## Notes and Warnings
 
 - `mop` calls [Nixhub](https://nixhub.io) under the hood to retrieve the correct `nixpkgs` commits
 
 - you do want to call a nix formatter on the generated `flake.nix`!!
 
 - for now, the `with_packages` supports fully `python`, and partially `R`
+
+- it might require you to edit the `flake.nix` to fill up some `sha256` or `hash`
 
